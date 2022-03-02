@@ -7,25 +7,32 @@ namespace TravelDiary.Controllers
   public class PlacesController : Controller
   {
 
-    // [HttpGet("/items")]
-    // public ActionResult Index()
-    // {
+    [HttpGet("/places")]
+    public ActionResult Index()
+    {
 
-    //   List<Item> allItems = Item.GetAll();
-    //   return View(allItems);
-    // }
+      List<Place> passport = Place.GetAll();
+      return View(passport);
+    }
 
-    // [HttpGet("/items/new")]
-    // public ActionResult CreateForm()
-    // {
-    //   return View();
-    // }
+    [HttpGet("/places/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
 
-    // [HttpPost("/items")]
-    // public ActionResult Create(string description)
-    // {
-    //   Item myItem = new Item(description);
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost("/places")]
+    public ActionResult Create(string cityName, string highlights)
+    {
+      Place myItem = new Place(cityName, highlights);
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost("/places/delete")]
+    public ActionResult DeleteAll()
+    {
+      Place.ClearAll();
+      return RedirectToAction("Index");
+    }
   }
 }

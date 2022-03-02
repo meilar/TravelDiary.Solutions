@@ -10,16 +10,13 @@
       <div class="jumbotron">
         <h1 class="display-4">Travel Diary Webapp</h1>
         <p class="lead">This webapp keeps track of the places you've visited. Click below to add new travel records or update your list.</p>
-        <form action="/places/new" method="GET">
-        <button class="btn btn-primary btn-lg" role="button">Add a Trip</button>
-        </form>
-        <form action="/places" method="GET">
-        <button class="btn btn-primary btn-lg" role="button">View All Trips</button>
-        </form>
-        <form action="/places/delete" method="POST">
-        <button class="btn btn-danger btn-lg"role="button">Delete All Trips</button>
-        </form>
       </div>
+      <form action="/places" method="post">
+      <label for="cityName">Add a Place:</label>
+      <input id="cityName" name="cityName" type="text">
+      <label for="highlights">What are some highights of the trip?</label>
+      <input id="highlights" name="highlights" type="text">
+      <button type="submit">Submit</button>
     </div>
   </body>
 </html>
