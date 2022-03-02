@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Places.Models;
+using TravelDiary.Models;
 using System.Collections.Generic;
 
-namespace Places.Controllers
+namespace TravelDiary.Controllers
 {
   public class PlacesController : Controller
   {
